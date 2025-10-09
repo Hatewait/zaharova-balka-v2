@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/reveal.css">
 
 </head>
 <?php
@@ -235,10 +236,17 @@ render_header([
   <script type="text/javascript" src="assets/js/libs/graph-modal/graph-modal.min.js"></script>
   <script type="text/javascript" src="assets/js/libs/fancybox/fancybox.umd.js"></script>
   <script type="text/javascript" src="assets/js/libs/validate/validate-js.min.js"></script>
+  <script type="text/javascript" src="assets/js/libs/inputmask/inputmask.min.js"></script>
   <script type="text/javascript" src="assets/js/libs/dynamic-adaptive/dynamic-adaptive.min.js"></script>
 
   <script type="text/javascript" src="assets/js/swipers.js"></script>
   <script type="text/javascript" src="assets/js/main.js"></script>
+
+  <script type="text/javascript" src="assets/js/validate-form.js"></script>
+  <script type="text/javascript" src="assets/js/reveal-on-scroll.js"></script>
+  <script type="text/javascript" src="assets/js/libs/lenis/lenis.min.js"></script>
+  <script type="text/javascript" src="assets/js/smooth-scroll.js"></script>
+  <script type="text/javascript" src="assets/js/hero-reveal.js"></script>
 </body>
 
 </html>

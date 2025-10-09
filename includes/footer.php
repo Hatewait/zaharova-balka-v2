@@ -6,10 +6,10 @@
           <p class="space-sm">Программы клубного отдыха</p>
           <ul class="list-reset footer__grid-links">
             <li>
-              <a href="arenda.php" class="color-white link-md-light">Аренда клубного дома «Байрам»</a>
+              <a href="arenda.php" class="color-white link-md-light link-decor">Аренда клубного дома «Байрам»</a>
             </li>
             <li>
-              <a href="avtorskie-tury.php" class="color-white link-md-light">Авторские туры</a>
+              <a href="avtorskie-tury.php" class="color-white link-md-light link-decor">Авторские туры</a>
             </li>
           </ul>
         </div>
@@ -27,7 +27,7 @@
           <p class="space-sm">Услуги</p>
           <ul class="list-reset footer__grid-links">
             <li>
-              <a href="services.php" class="color-white link-md-light">Дополнительные услуги</a>
+              <a href="services.php" class="color-white link-md-light link-decor">Дополнительные услуги</a>
             </li>
           </ul>
         </div>
@@ -45,10 +45,10 @@
           <p class="space-sm">Контакты</p>
           <ul class="list-reset footer__grid-links space-xxs">
             <li>
-              <a href="mailto:info@test.ru" class="color-white link-md-light">info@test.ru</a>
+              <a href="mailto:info@test.ru" class="color-white link-md-light link-decor">info@test.ru</a>
             </li>
             <li>
-              <a href="tel:" class="color-white link-md-light">+7 (495) 153-14-98</a>
+              <a href="tel:" class="color-white link-md-light link-decor">+7 (495) 153-14-98</a>
             </li>
           </ul>
           <p class="caption-sm text-color-secondary-opacity">с 8:00 до 21:00 (ежедневно)</p>
@@ -87,16 +87,13 @@
       </a>
       <ul class="list-reset footer__nav">
         <li>
-          <a href="" class="footer__nav-link buttons-md-medium text-color-secondary">О нас</a>
+          <a href="about.php" class="footer__nav-link buttons-md-medium text-color-secondary">О нас</a>
         </li>
         <li>
-          <a href="" class="footer__nav-link buttons-md-medium text-color-secondary">Контакты</a>
+          <a href="contacts.php" class="footer__nav-link buttons-md-medium text-color-secondary">Контакты</a>
         </li>
         <li>
-          <a href="faq.php" class="footer__nav-link buttons-md-medium text-color-secondary">Ответы на вопросы</a>
-        </li>
-        <li>
-          <a href="" class="footer__nav-link buttons-md-medium text-color-secondary">Реквизиты</a>
+          <a href="questions.php" class="footer__nav-link buttons-md-medium text-color-secondary">Ответы на вопросы</a>
         </li>
       </ul>
 
@@ -147,3 +144,97 @@
     </div>
   </div>
 </footer>
+
+<!-- modals -->
+<div class="graph-modal">
+  <div class="graph-modal__container graph-modal__container_custom" role="dialog" aria-modal="true"
+    data-graph-target="consult">
+    <div class="graph-modal__content">
+      <button class="btn-reset graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+        <svg class="icon-stroke" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none">
+          <path d="M20 4L4 20M20 20L4 4" stroke="#222222" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+      <div class="graph-modal__top space-lg">
+        <p class="subtitle-xl">Забронировать путешествие</p>
+        <p class="text-md-regular text-color-secondary">Приоритет команды — ваши комфорт, безопасность и приватность,
+          поэтому мы всегда сдаём дом исключительно полностью. На территории будете только вы и наши первоклассные
+          сотрудники.</p>
+      </div>
+
+      <form action="" class="form" data-consult-form data-form-reset>
+        <div class="form__inputs space-xl">
+          <div class="form__inputs-group">
+            <input name="name" type="text" placeholder="Имя Фамилия"
+              class="custom-input placeholder-primary text-lg-light text-color-secondary" data-input-name>
+          </div>
+
+          <div class="form__inputs-group">
+            <input name="tel" type="tel" placeholder="Номер телефона"
+              class="custom-input placeholder-primary text-lg-light text-color-secondary" data-input-tel>
+          </div>
+
+          <div class="form__inputs-group">
+            <input name="email" type="email" placeholder="Электронная почта"
+              class="custom-input placeholder-primary text-lg-light text-color-secondary" data-input-email>
+          </div>
+
+        </div>
+        <div class="form__action">
+          <div class="form__agreement">
+            <label class="custom-checkbox custom-checkbox_form">
+              <input type="checkbox" checked required>
+              <span class="text-lg-light">
+                <span class="form__agreement-caption">
+                  Нажимая кнопку, вы даете согласие на обработку
+                  <a href="#" class="link-md-light color-accent form__agreement-link">персональных данных</a>
+                </span>
+              </span>
+            </label>
+          </div>
+          <button class="button-filled color-white buttons-lg-medium form__button" aria-label="Отправить форму"
+            data-submit-form>Забронировать
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="graph-modal__container graph-modal__container_custom" role="dialog" aria-modal="true"
+    data-graph-target="success-consult">
+    <div class="graph-modal__content">
+      <div class="graph-modal__top space-md">
+        <p class="heading-m">запрос отправлен</p>
+        <button class="btn-reset graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+          <svg class="icon-stroke" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none">
+            <path d="M20 4L4 20M20 20L4 4" stroke="#222222" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <p class="space-xl">Спасибо! Наши специалисты свяжутся с вами в течении одного рабочего дня</p>
+      <button class="text-l-bold button-filled text-dark js-modal-close" aria-label="Закрыть модальное окно">Закрыть
+      </button>
+    </div>
+  </div>
+  <div class="graph-modal__container graph-modal__container_custom" role="dialog" aria-modal="true"
+    data-graph-target="error">
+    <div class="graph-modal__content">
+      <div class="graph-modal__top space-md">
+        <p class="heading-m">Ошибка!</p>
+        <button class="btn-reset graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+          <svg class="icon-stroke" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none">
+            <path d="M20 4L4 20M20 20L4 4" stroke="#222222" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <p class="space-xl">Произошла какая-то ошибка, форма не отправлена, пожалуйста, попробуйте еще раз</p>
+      <button class="text-l-bold button-filled text-dark js-modal-close" aria-label="Закрыть модальное окно">Закрыть
+      </button>
+    </div>
+  </div>
+</div>

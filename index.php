@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/reveal.css">
 </head>
 
 <body>
@@ -38,7 +39,6 @@
       'subtitle' => 'Природа Кавказа, конные прогулки, уединение и полный комфорт',
       'button' => [
         'text' => 'Оставить заявку',
-        'href' => 'catalog_old.html',
         'data' => 'data-graph-path="consult"'
       ]
     ]
@@ -56,7 +56,7 @@
       </div>
     </section>
 
-    <section class="tours space-xxxl">
+    <section id="tours" class="tours space-xxxl">
       <div class="container">
         <div class="tours__wrap">
           <a href="arenda.php" class="tour">
@@ -170,7 +170,7 @@
         </div>
       </div>
     </section>
-    <section class="feature-icons space-xxxl">
+    <section class="feature-icons space-xxxl" data-reveal="fade-up">
       <div class="container">
         <div class="feature-icons__content">
           <h2 class="heading-md">Что мы предлагаем</h2>
@@ -178,7 +178,7 @@
             причины выбрать Байрам — это атмосфера, сервис, гибкость и впечатления, которые остаются с вами надолго</p>
         </div>
 
-        <div class="feature-icons__items">
+        <div class="feature-icons__items" data-stagger="feature-icons">
           <div class="feature-icons__item">
             <div class="feature-icons__round">
               <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -222,7 +222,25 @@
         </div>
       </div>
     </section>
-    <section class="features space-xxxl">
+
+    <section class="call-action space-xxxl">
+      <div class="container call-action__container">
+        <div class="call-action__block">
+          <p class="heading-wrap heading-md color-white space-lg">
+            Отдых, который
+            <span> <span class="heading-md-accent">подойдет</span> именно вам</span>
+          </p>
+          <p class="color-white space-xl">Оставьте заявку и наши менеджеры смогут подобрать тур, который вам подойдет
+          </p>
+
+          <button class="btn-reset button-filled color-white buttons-lg-medium" data-graph-path="consult"
+            aria-label="консультация">
+            Оставить заявку
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="features space-xxxl" data-reveal="fade">
       <div class="container">
         <div class="features__wrap">
           <div class="features__content">
@@ -283,103 +301,28 @@
         </div>
       </div>
     </section>
-    <section class="call-action space-xxxl">
-      <div class="container call-action__container">
-        <div class="call-action__block">
-          <p class="heading-wrap heading-md color-white space-lg">
-            Отдых, который
-            <span> <span class="heading-md-accent">подойдет</span> именно вам</span>
-          </p>
-          <p class="color-white space-xl">Оставьте заявку и наши менеджеры смогут подобрать тур, который вам подойдет
-          </p>
-
-          <button class="btn-reset button-filled color-white buttons-lg-medium" data-graph-path="consult"
-            aria-label="консультация">
-            Оставить заявку
-          </button>
-        </div>
-      </div>
-    </section>
-    <section class="pipeline space-xxxl">
-      <div class="container pipeline__wrap">
-        <h2 class="heading-md">Как это работает</h2>
-        <div class="pipeline__row">
-          <div class="pipeline__row-item">
-            <div class="pipeline__row-top">
-              <span class="pipeline__row-figure button-round heading-sm-accent color-white">1</span>
-              <picture>
-                <!-- для экранов до 768px подставляем мобильную картинку -->
-                <source srcset="assets/img/pipeline-mob.svg" media="(max-width: 1023px)">
-
-                <!-- fallback — основная картинка для десктопа -->
-                <img src="assets/img/pipeline.svg" alt="Этапы работы">
-              </picture>
-            </div>
-            <p class="text-md-regular text-color-secondary pipeline__row-description">Выбираете даты и формат отдыха —
-              классический, активный или корпоративный</p>
-          </div>
-          <div class="pipeline__row-item">
-            <div class="pipeline__row-top">
-              <span class="pipeline__row-figure button-round heading-sm-accent color-white">2</span>
-              <picture>
-                <!-- для экранов до 768px подставляем мобильную картинку -->
-                <source srcset="assets/img/pipeline-mob.svg" media="(max-width: 1023px)">
-
-                <!-- fallback — основная картинка для десктопа -->
-                <img src="assets/img/pipeline.svg" alt="Этапы работы">
-              </picture>
-            </div>
-            <p class="text-md-regular text-color-secondary pipeline__row-description">Мы согласуем детали, вы вносите
-              предоплату и получаете подтвержденией</p>
-          </div>
-          <div class="pipeline__row-item">
-            <div class="pipeline__row-top">
-              <span class="pipeline__row-figure button-round heading-sm-accent color-white">3</span>
-              <picture>
-                <!-- для экранов до 768px подставляем мобильную картинку -->
-                <source srcset="assets/img/pipeline-mob.svg" media="(max-width: 1023px)">
-
-                <!-- fallback — основная картинка для десктопа -->
-                <img src="assets/img/pipeline.svg" alt="Этапы работы">
-              </picture>
-            </div>
-            <p class="text-md-regular text-color-secondary pipeline__row-description">Присылаем чек-лист, карту проезда
-              и полезную информацию</p>
-          </div>
-          <div class="pipeline__row-item">
-            <div class="pipeline__row-top">
-              <span class="pipeline__row-figure button-round heading-sm-accent color-white">4</span>
-              <picture>
-                <!-- для экранов до 768px подставляем мобильную картинку -->
-                <source srcset="assets/img/pipeline-mob.svg" media="(max-width: 1023px)">
-
-                <!-- fallback — основная картинка для десктопа -->
-                <img src="assets/img/pipeline.svg" alt="Этапы работы">
-              </picture>
-            </div>
-            <p class="text-md-regular text-color-secondary pipeline__row-description">Встречаем, размещаем и начинаем
-              ваш отдых без лишней суеты</p>
-          </div>
-          <div class="pipeline__row-item">
-            <div class="pipeline__row-top">
-              <button class="btn-reset button-filled color-white buttons-lg-medium nowrap">Выбрать дату</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
   <?php include __DIR__ . '/includes/footer.php'; ?>
+
   <script type="text/javascript" src="assets/js/libs/swiper/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="assets/js/libs/accordion/accordion.js"></script>
   <script type="text/javascript" src="assets/js/libs/graph-modal/graph-modal.min.js"></script>
   <script type="text/javascript" src="assets/js/libs/fancybox/fancybox.umd.js"></script>
   <script type="text/javascript" src="assets/js/libs/validate/validate-js.min.js"></script>
+  <script type="text/javascript" src="assets/js/libs/inputmask/inputmask.min.js"></script>
   <script type="text/javascript" src="assets/js/libs/dynamic-adaptive/dynamic-adaptive.min.js"></script>
 
   <script type="text/javascript" src="assets/js/swipers.js"></script>
   <script type="text/javascript" src="assets/js/main.js"></script>
+  <script type="text/javascript" src="assets/js/link-fix.js"></script>
+  <script type="text/javascript" src="assets/js/validate-form.js"></script>
+  <script type="text/javascript" src="assets/js/reveal-on-scroll.js"></script>
+  <script type="text/javascript" src="assets/js/tours-stagger.js"></script>
+  <script type="text/javascript" src="assets/js/feature-icons-stagger.js"></script>
+  <script type="text/javascript" src="assets/js/libs/lenis/lenis.min.js"></script>
+  <script type="text/javascript" src="assets/js/smooth-scroll.js"></script>
+  <script type="text/javascript" src="assets/js/hero-reveal.js"></script>
+  <script type="text/javascript" src="assets/js/video-hero-reveal.js"></script>
 </body>
 
 </html>

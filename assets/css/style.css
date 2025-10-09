@@ -118,6 +118,7 @@
   --corner-radius-xxl: 4rem;
   --corner-radius-xl: 3rem;
   --corner-radius-xs: 0.75rem;
+  --corner-radius-xxs: 0.25rem;
   --corner-radius-lg: 2rem;
   --corner-radius-md: 1.5rem;
 
@@ -129,7 +130,7 @@
 }
 
 /* экран до 1760px */
-@media (max-width: 1760px) {
+@media (max-width: 1719px) {
   :root {
     /* Text-size styles */
     --heading-lg: 4rem;
@@ -574,6 +575,26 @@ a {
   position: relative;
 }
 
+.header_not-found .header__video-wrap {
+  height: 100vh;
+}
+
+.header_not-found p {
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.header_not-found .header__info {
+  gap: var(--space-lg);
+}
+
+.header_not-found .header__video-wrap svg {
+  width: 24.6875rem;
+  height: 12.625rem;
+}
+
 .header__burger {
   display: none;
 }
@@ -769,6 +790,16 @@ a {
     line-height: 110%;
     color: var(--text-main);
   }
+
+  .header_not-found p {
+    font-size: 1.125rem;
+    line-height: 120%;
+  }
+
+  .header_not-found .header__video-wrap svg {
+    width: 19.46944rem;
+    height: 9.97525rem;
+  }
 }
 
 @media (max-width: 1023px) {
@@ -779,6 +810,16 @@ a {
 
   .header__contacts a {
     color: var(--text-main);
+  }
+
+  .header_not-found .header__video-wrap svg {
+    width: 13.72844rem;
+    height: 7.045rem;
+  }
+
+  .header_not-found p {
+    font-size: 1rem;
+    line-height: 130%;
   }
 }
 
@@ -1073,6 +1114,9 @@ a {
   gap: var(--space-xl);
   padding: var(--space-xxl);
 }
+
+.tour__bottom,
+.tour__bottom button { pointer-events: auto !important; }
 
 .tour__text {
   display: -webkit-box;
@@ -2612,3 +2656,108 @@ a {
   .rooms-plan__stack{ --size: 68px; }
 }
 */
+
+/* modal */
+.graph-modal__container_custom {
+  width: 53.75rem;
+  padding: var(--space-xl, 3rem) var(--space-xxl, 4rem);
+  border-radius: var(--corner-radius-lg, 2rem);
+  background: var(--bg-primary, #FFF);
+}
+.graph-modal__top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.graph-modal__content {
+  position: relative;
+}
+
+.graph-modal__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.graph-modal {
+  background: var(--bg-acient-20, rgba(0, 0, 0, 0.20));
+  /* desktop/blur/badge/bg */
+  backdrop-filter: blur(7.5px);
+}
+
+.form__inputs-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxxs);
+}
+
+.form .just-validate-error-label {
+  font-size: 12px;
+  line-height: 16px;
+  color: darkred !important;
+}
+
+.form__agreement {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xxs);
+}
+
+.custom-checkbox {
+  cursor: pointer;
+}
+
+.custom-checkbox > input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.custom-checkbox > span {
+  display: inline-flex;
+  user-select: none;
+}
+
+.custom-checkbox > input:checked + span::before {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.4346 3.43549C13.747 3.12307 14.253 3.12307 14.5655 3.43549C14.8778 3.74792 14.8778 4.25397 14.5655 4.56635L6.31547 12.8163C6.00309 13.1287 5.49702 13.1286 5.18461 12.8163L1.43461 9.06635C1.12221 8.75394 1.12223 8.24791 1.43461 7.93549C1.74703 7.62307 2.25305 7.62307 2.56547 7.93549L5.75004 11.1201L13.4346 3.43549Z' fill='%2380011F'/%3e%3c/svg%3e");
+}
+
+.custom-checkbox > span::before {
+  content: '';
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  flex-grow: 0;
+  background: var(--bg-secondary, #EDEDED);
+  border-radius: var(--corner-radius-xxs, 0.25rem);
+  border: 1px solid var(--icons-inverse-on-color, #FFF);
+  margin-right: var(--space-xxs);
+  margin-top: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.form__agreement-link {
+  border-bottom: 1px solid var(--text-accent);
+}
+
+.form__action {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.form__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.custom-input {
+  border-bottom: 1px solid var(--icons-secondary, #DCDCDC);
+  padding-bottom: var(--space-sm);
+}

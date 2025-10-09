@@ -6,6 +6,7 @@
  *   [
  *     'classes' => ['header_bg', 'space-md'], // дополнительные классы для <header>
  *     'active' => 'about', // активный пункт меню (formats|services|about|contacts)
+ *     'isNotFoundPage' => false, // true для страницы 404 (кнопка будет ссылкой)
  *     'media' => [ // медиа-контент (null если не нужен)
  *       'type' => 'video', // 'video' или 'image'
  *       'src' => 'assets/video/intro.mp4',
@@ -20,7 +21,7 @@
  *       'subtitle' => 'Подзаголовок',
  *       'button' => [ // кнопка (опционально)
  *         'text' => 'Оставить заявку',
- *         'href' => 'catalog_old.html',
+ *         'href' => 'catalog_old.html', // только для isNotFoundPage=true
  *         'data' => 'data-graph-path="consult"'
  *       ]
  *     ]
@@ -33,6 +34,17 @@ function render_header(array $opts): void
   if (isset($opts['classes']) && is_array($opts['classes'])) {
     $headerClasses = array_merge($headerClasses, $opts['classes']);
   }
+
+  // Проверяем, нужна ли анимация для изображений или видео
+  $isImage = isset($opts['media']['type']) && $opts['media']['type'] === 'image';
+  $isVideo = isset($opts['media']['type']) && $opts['media']['type'] === 'video';
+  if ($isImage) {
+    $headerClasses[] = 'js-hero';
+  }
+  if ($isVideo) {
+    $headerClasses[] = 'js-video-hero';
+  }
+
   $headerClassString = htmlspecialchars(implode(' ', $headerClasses), ENT_QUOTES, 'UTF-8');
 
   // Определяем wrapper классы
@@ -56,7 +68,14 @@ function render_header(array $opts): void
   // Логотип
   $logoHref = ($active === 'index') ? '/' : 'index.php';
 
-  echo '<header class="' . $headerClassString . '">' . "\n";
+  // Подготовка атрибутов для изображений
+  $bgSrc = $isImage ? ($opts['media']['src'] ?? '') : '';
+  $heroAttrs = '';
+  if ($isImage && $bgSrc) {
+    $heroAttrs = ' data-hero-bg="' . htmlspecialchars($bgSrc, ENT_QUOTES, 'UTF-8') . '"';
+  }
+
+  echo '<header class="' . $headerClassString . '"' . $heroAttrs . '>' . "\n";
   echo '  <div class="' . $wrapperClassString . '" data-header="">' . "\n";
   echo '    <div class="container header__container">' . "\n";
   echo '      <a href="' . htmlspecialchars($logoHref, ENT_QUOTES, 'UTF-8') . '" class="header__logo-wrap">' . "\n";
@@ -132,7 +151,8 @@ function render_header(array $opts): void
       echo '      <source src="' . htmlspecialchars($media['src'], ENT_QUOTES, 'UTF-8') . '" type="video/mp4">' . "\n";
       echo '    </video>' . "\n";
     } else {
-      echo '    <img src="' . htmlspecialchars($media['src'], ENT_QUOTES, 'UTF-8') . '" alt="" class="header__bg">' . "\n";
+      // Для изображений не выводим img, фон будет установлен через JS
+      // echo '    <img src="' . htmlspecialchars($media['src'], ENT_QUOTES, 'UTF-8') . '" alt="" class="header__bg">' . "\n";
     }
 
     echo '' . "\n";
@@ -141,26 +161,48 @@ function render_header(array $opts): void
     echo '        <div class="header__video-wrap-text">' . "\n";
 
     if (isset($content['title'])) {
-      echo '          <h1 class="heading-wrap heading-wrap_header heading-lg color-white text-center">' . "\n";
+      $titleClass = 'heading-wrap heading-wrap_header heading-lg color-white text-center';
+      if ($isImage || $isVideo) {
+        $titleClass .= ' js-hero-item';
+      }
+      echo '          <h1 class="' . $titleClass . '">' . "\n";
       echo '            ' . $content['title'] . "\n";
       echo '          </h1>' . "\n";
     }
 
     if (isset($content['subtitle'])) {
-      echo '          <p class="subtitle-md color-white text-center">' . htmlspecialchars($content['subtitle'], ENT_QUOTES, 'UTF-8') . '</p>' . "\n";
+      $subtitleClass = 'subtitle-md color-white text-center';
+      if ($isImage || $isVideo) {
+        $subtitleClass .= ' js-hero-item';
+      }
+      echo '          <p class="' . $subtitleClass . '">' . htmlspecialchars($content['subtitle'], ENT_QUOTES, 'UTF-8') . '</p>' . "\n";
     }
 
     echo '        </div>' . "\n";
 
     if (isset($content['button'])) {
       $button = $content['button'];
-      $buttonHref = isset($button['href']) ? htmlspecialchars($button['href'], ENT_QUOTES, 'UTF-8') : '#';
       $buttonText = htmlspecialchars($button['text'], ENT_QUOTES, 'UTF-8');
       $buttonData = isset($button['data']) ? ' ' . $button['data'] : '';
+      $isNotFoundPage = isset($opts['isNotFoundPage']) && $opts['isNotFoundPage'] === true;
 
-      echo '        <a href="' . $buttonHref . '" class="button-filled color-white buttons-lg-medium"' . $buttonData . ' aria-label="консультация">' . "\n";
-      echo '          ' . $buttonText . "\n";
-      echo '        </a>' . "\n";
+      $buttonClass = 'button-filled color-white buttons-lg-medium';
+      if ($isImage || $isVideo) {
+        $buttonClass .= ' js-hero-item';
+      }
+
+      if ($isNotFoundPage) {
+        // Для страницы 404 - ссылка на главную
+        $buttonHref = isset($button['href']) ? htmlspecialchars($button['href'], ENT_QUOTES, 'UTF-8') : '/';
+        echo '        <a href="' . $buttonHref . '" class="' . $buttonClass . '"' . $buttonData . ' aria-label="консультация">' . "\n";
+        echo '          ' . $buttonText . "\n";
+        echo '        </a>' . "\n";
+      } else {
+        // Для всех остальных страниц - кнопка с data-graph-path
+        echo '        <button class="' . $buttonClass . '"' . $buttonData . ' aria-label="консультация">' . "\n";
+        echo '          ' . $buttonText . "\n";
+        echo '        </button>' . "\n";
+      }
     }
 
     echo '      </div>' . "\n";

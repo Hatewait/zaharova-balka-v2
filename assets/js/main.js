@@ -50,3 +50,4 @@ const setFilled = (el) => {
   const field = el.closest('.date-field');
   if (field) field.classList.toggle('is-filled', !!el.value.trim());
 };
+
