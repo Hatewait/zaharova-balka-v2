@@ -573,6 +573,7 @@ a {
 /* header */
 .header {
   position: relative;
+  z-index: 1000;
 }
 
 .header_not-found .header__video-wrap {
