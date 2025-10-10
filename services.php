@@ -158,7 +158,6 @@
   <script type="text/javascript" src="assets/js/validate-form.js"></script>
   <script type="text/javascript" src="assets/js/reveal-on-scroll.js"></script>
   <script type="text/javascript" src="assets/js/services-stagger.js"></script>
-  <script type="text/javascript" src="assets/js/libs/lenis/lenis.min.js"></script>
   <script type="text/javascript" src="assets/js/smooth-scroll.js"></script>
   <script type="text/javascript" src="assets/js/hero-reveal.js"></script>
 </body>

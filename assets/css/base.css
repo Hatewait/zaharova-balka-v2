@@ -229,16 +229,8 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 */
 
-/* отключает нативную прокрутку только когда активен Lenis */
-html.lenis {
-  height: auto; /* рекомендуемая настройка библиотеки */
-}
-
-html.lenis {
-  scroll-behavior: auto !important; /* отключаем нативный smooth scroll */
-}
-
-html:not(.lenis) {
-  scroll-behavior: smooth; /* включаем только когда Lenis не активен */
+/* Native smooth scroll enabled after Lenis removal */
+html {
+  scroll-behavior: smooth;
 }
 

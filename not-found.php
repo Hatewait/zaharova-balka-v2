@@ -48,7 +48,6 @@
         <script type="text/javascript" src="/assets/js/libs/dynamic-adaptive/dynamic-adaptive.min.js"></script>
         <script type="text/javascript" src="/assets/js/main.js"></script>
         <script type="text/javascript" src="assets/js/reveal-on-scroll.js"></script>
-        <script type="text/javascript" src="assets/js/libs/lenis/lenis.min.js"></script>
         <script type="text/javascript" src="assets/js/smooth-scroll.js"></script>
         <script type="text/javascript" src="assets/js/hero-reveal.js"></script>
 </body>
