@@ -10,6 +10,11 @@
 
     // Обработчик клика по кнопке выпадающего меню
     function handleDropdownClick(e) {
+      // На мобильных устройствах (< 1720px) не обрабатываем dropdown
+      if (window.innerWidth < 1720) {
+        return;
+      }
+      
       e.preventDefault();
       e.stopPropagation();
       

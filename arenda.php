@@ -194,9 +194,8 @@
                 </div>
                 <div class="slide-right">
                   <div class="slide-content services-slider__slide-content">
-                    <h3 class="subtitle-xl-accent">Мангал-зона</h3>
-                    <p class="text-md-regular text-color-secondary">Уголь, шампуры, решётки — всё подготовим, останется
-                      только жарить и наслаждаться.</p>
+                    <h3 class="subtitle-xl-accent">Прогулки на лошадях</h3>
+                    <p class="text-md-regular text-color-secondary">Прогулки по кавказским тропам с опытными инструкторами. Маршруты можно подобрать под любой уровень подготовки.</p>
                   </div>
                 </div>
               </div>
@@ -210,9 +209,23 @@
                 </div>
                 <div class="slide-right">
                   <div class="slide-content services-slider__slide-content">
+                    <h3 class="subtitle-xl-accent">Фурако</h3>
+                    <p class="text-md-regular text-color-secondary">Тёплая купель под открытым небом, где особенно приятно отдыхать вечером после активного дня.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Слайд 4 -->
+            <div class="swiper-slide">
+              <div class="services-slider__layout">
+                <div class="services-slider__image-wrap">
+                  <img src="/assets/img/arenda/slide-4.jpg" alt="">
+                </div>
+                <div class="slide-right">
+                  <div class="slide-content services-slider__slide-content">
                     <h3 class="subtitle-xl-accent">Трансфер</h3>
-                    <p class="text-md-regular text-color-secondary">Встречаем на вокзале или в аэропорту, комфортная
-                      дорога до базы.</p>
+                    <p class="text-md-regular text-color-secondary">Мы встречаем вас в аэропорту или на ж/д вокзале и с комфортом доставляем прямо до порога клуба.</p>
                   </div>
                 </div>
               </div>
@@ -249,6 +262,9 @@
               </div>
               <div class="swiper-slide">
                 <img src="/assets/img/arenda/slide-3.jpg" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="/assets/img/arenda/slide-4.jpg" alt="">
               </div>
             </div>
           </div>

@@ -26,6 +26,8 @@ const closeMenu = () => {
   menu.classList.remove('opened');
   body.classList.remove('opened');
   menuButton.innerHTML = hamburgerIcon;
+  // Сбрасываем состояние подменю
+  resetSubmenu();
 };
 
 // Функция для переключения состояния меню
@@ -37,10 +39,76 @@ const toggleMenu = () => {
   }
 };
 
+// Функция для сброса состояния подменю
+const resetSubmenu = () => {
+  const title = menu.querySelector('.side-menu__title');
+  const backBtn = menu.querySelector('[data-menu-back]');
+  const mobileNav = menu.querySelector('.js-insert-nav');
+  
+  if (title) title.style.display = 'block';
+  if (backBtn) backBtn.style.display = 'none';
+  
+  // Удаляем созданные ссылки если они есть
+  const customLinks = mobileNav ? mobileNav.querySelectorAll('.mobile-submenu-link') : [];
+  customLinks.forEach(link => link.remove());
+  
+  // Показываем все пункты меню
+  const navItems = mobileNav ? mobileNav.querySelectorAll('li') : [];
+  navItems.forEach(item => {
+    item.style.display = 'block';
+  });
+};
+
+// Функция для показа подменю
+const showSubmenu = () => {
+  const title = menu.querySelector('.side-menu__title');
+  const backBtn = menu.querySelector('[data-menu-back]');
+  const mobileNav = menu.querySelector('.js-insert-nav');
+  
+  if (title) title.style.display = 'none';
+  if (backBtn) backBtn.style.display = 'flex';
+  
+  // Скрываем все основные пункты меню
+  const navItems = mobileNav ? mobileNav.querySelectorAll('li') : [];
+  navItems.forEach(item => {
+    item.style.display = 'none';
+  });
+  
+  // Создаем новые независимые ссылки
+  if (mobileNav) {
+    const arendaLink = document.createElement('li');
+    arendaLink.innerHTML = '<a href="arenda.php" class="color-white link-md-light">Аренда</a>';
+    arendaLink.classList.add('mobile-submenu-link', 'space-xxs');
+    
+    const toursLink = document.createElement('li');
+    toursLink.innerHTML = '<a href="avtorskie-tury.php" class="color-white link-md-light">Авторские туры</a>';
+    toursLink.classList.add('mobile-submenu-link');
+    
+    // Добавляем ссылки в мобильное меню
+    mobileNav.appendChild(arendaLink);
+    mobileNav.appendChild(toursLink);
+  }
+};
+
 // Обработчик клика по кнопке бургера
 if (menuButton) {
   menuButton.addEventListener('click', toggleMenu);
 }
+
+// Обработчик клика по кнопке "Назад"
+const backBtn = document.querySelector('[data-menu-back]');
+if (backBtn) {
+  backBtn.addEventListener('click', resetSubmenu);
+}
+
+// Обработчик клика по пункту "Программы отдыха" на мобильных устройствах
+document.addEventListener('click', (e) => {
+  // Проверяем, что это клик по пункту с dropdown на мобильном устройстве
+  if (e.target.closest('.dropdown-toggle') && window.innerWidth < 1720) {
+    e.preventDefault();
+    showSubmenu();
+  }
+});
 
 // Закрытие меню при клике вне его области
 if (menu) {

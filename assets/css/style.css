@@ -800,7 +800,7 @@ a {
   top: 64px;
   width: 23.25rem;
   height: 33.875rem;
-  padding: var(--space-lg) var(--space-xl) var(--space-xxl) var(--space-xl);
+  padding: var(--space-xl, 32px) 1rem;
   flex-direction: column;
   border-radius: var(--corner-radius-md, 16px) 0 0 0;
   background: var(--bg-tertiary, #363636);
@@ -813,7 +813,7 @@ a {
 }
 
 .side-menu.opened {
-  padding: var(--space-md) var(--space-xl) var(--space-xxl) var(--space-xl);
+  padding: var(--space-xl, 32px) 1rem;
   z-index: 3;
   opacity: 1;
   -webkit-transform: translate(0);
@@ -821,6 +821,10 @@ a {
   transform: translate(0);
   -webkit-transition: .3s;
   transition: .3s;
+}
+
+.dropdown-arrow {
+  display: none;
 }
 
 @media (max-width: 1719px) {
@@ -862,31 +866,47 @@ a {
   .side-menu__top {
     display: flex;
   }
-  
+
   .side-menu__title {
     padding-bottom: var(--space-lg);
     border-bottom: 1px solid var(--icons-inverse-on-color);
     width: 100%;
   }
 
+  .side-menu__back-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xxxs);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--icons-inverse-on-color);
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .side-menu__back-btn:hover {
+    opacity: 0.8;
+  }
+
+  .header__nav .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xxxs);
+  }
+
+  /* Стили для иконки стрелки в dropdown */
+  .dropdown-arrow {
+    display: inline-flex;
+    transition: transform 0.3s ease;
+  }
+
+  .dropdown:hover .dropdown-arrow {
+    transform: rotate(90deg);
+  }
+
   .header__nav {
     flex-direction: column;
     align-items: flex-start;
   }
-
-  /*.header__nav li a {
-    font-size: 1.8rem;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 110%;
-    color: var(--text-main);
-  }*/
-
-  /* Активная ссылка в мобильном меню */
-  /*.header__nav li a.active {
-    color: var(--color-primary) !important;
-    font-weight: 900;
-  }*/
 
   .header__nav li a.active::after {
     display: none; /* Убираем подчеркивание на мобильных */
@@ -910,12 +930,6 @@ a {
     display: block;
   }
 
-  /*.header__nav .dropdown-menu a {
-    padding: 6px 0;
-    font-size: 1.4rem;
-    color: var(--text-main);
-    text-align: right;
-  }*/
 
   .header__nav .dropdown-toggle::after {
     margin-left: 6px;
@@ -938,11 +952,7 @@ a {
 @media (max-width: 1023px) {
   .header__contacts {
     flex-direction: column;
-    align-items: flex-end;
-  }
-
-  .header__contacts a {
-    color: var(--text-main);
+    align-items: flex-start;
   }
 
   .header_not-found .header__video-wrap svg {
@@ -953,6 +963,10 @@ a {
   .header_not-found p {
     font-size: 1rem;
     line-height: 130%;
+  }
+
+  .side-menu__group {
+    margin-top: auto;
   }
 }
 
@@ -2131,7 +2145,7 @@ a {
 }
 
 .timeline-slider__img {
-  max-width: 100%;
+  width: 100%;
   height: 52.75rem;
   border-radius: var(--corner-radius-xxl, 4rem);
   object-fit: cover;
@@ -2903,4 +2917,14 @@ a {
 .custom-input {
   border-bottom: 1px solid var(--icons-secondary, #DCDCDC);
   padding-bottom: var(--space-sm);
+}
+
+/* Fancybox стили для видео */
+.fancybox__content {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.fancybox__content video {
+  border-radius: 8px;
 }

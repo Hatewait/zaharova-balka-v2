@@ -39,6 +39,14 @@
     <li class="<?= $has_dropdown ? 'dropdown' : '' ?>">
       <a href="<?= htmlspecialchars($href) ?>" class="<?= $link_class ?>" <?= $data_attrs ?>>
         <?= htmlspecialchars($item['text']) ?>
+        <?php if ($has_dropdown): ?>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"
+            class="dropdown-arrow">
+            <path
+              d="M5.43457 3.43481C5.74699 3.1224 6.25301 3.1224 6.56543 3.43481L10.5654 7.43481L11.1318 8.00024L10.5654 8.56567L6.56543 12.5657C6.25305 12.878 5.74699 12.8779 5.43457 12.5657C5.12217 12.2533 5.1222 11.7472 5.43457 11.4348L8.86914 8.00024L5.43457 4.56567C5.12217 4.25327 5.1222 3.74724 5.43457 3.43481Z"
+              fill="white" />
+          </svg>
+        <?php endif; ?>
       </a>
 
       <?php if ($has_dropdown && isset($item['dropdown_items'])): ?>

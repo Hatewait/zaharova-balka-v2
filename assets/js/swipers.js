@@ -2,6 +2,8 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const slider = new Swiper('[data-single-slider]', {
+    effect: 'fade',
+    fadeEffect: { crossFade: true }, // плавная перекладка прозрачности
     speed: 600,
     grabCursor: true,
     watchSlidesProgress: true,

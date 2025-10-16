@@ -136,9 +136,7 @@ render_header([
                   остановками</p>
                 <p class="text-color-secondary text-md-regular"><span
                     class="text-md-regular text-md-regular-bold text-color-secondary">Описание:</span>
-                  <br> Маршрут пройдёт по самым живописным горным дорогам Кавказа. Вы подниметесь на обзорные площадки
-                  с видами на ущелья и альпийские луга, сделаете остановки для коротких прогулок и фотосессий. В пути —
-                  пикник с блюдами кавказской кухни и напитками, чтобы насладиться атмосферой на высоте.
+                  <br> Путешествие к Кяфарскому городищу — это возможность прикоснуться к древней истории горного Кавказа. По пути вы увидите живописные ущелья и водопады, а также подниметесь к руинам средневекового поселения, расположенного на склонах хребта. С вершины открывается панорама долины реки Кяфар и заснеженных вершин. Во время прогулки предусмотрены короткие остановки для отдыха, фотографий и пикника с блюдами местной кухни.
                 </p>
               </div>
               <div class="tabs__pic">
@@ -149,7 +147,7 @@ render_header([
           <div class="tab-pane" data-id="1">
             <div class="tabs__inner">
               <div class="tabs__description">
-                <p class="subtitle-xl-accent space-xl">Марухское и Архызское ущелья 22</p>
+                <p class="subtitle-xl-accent space-xl">Кяфарское городище</p>
                 <p class="text-color-secondary text-md-regular space-sm"><span
                     class="text-md-regular text-md-regular-bold text-color-secondary">Продолжительность:</span> 3–4 часа
                 </p>

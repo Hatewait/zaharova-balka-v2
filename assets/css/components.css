@@ -159,14 +159,11 @@
   }
 
   .button-bordered:hover {
-    color: var(--buttons-secondary-hover, #193E2C);
-    border-color: var(--buttons-secondary-hover, #193E2C);
-    background: transparent;
+
   }
 
   .button-bordered:active {
-    color: var(--buttons-secondary-pressed, #193E2C);
-    border-color: var(--buttons-secondary-pressed, #193E2C);
+
   }
 
   .round-button:not(.swiper-button-disabled):hover {
@@ -174,11 +171,11 @@
   }
 
   .button-texted:hover {
-    color: var(--buttons-secondary-hover, #193E2C);
+
   }
 
   .button-texted:active {
-    color: var(--buttons-secondary-pressed, #193E2C);
+
   }
 }
 

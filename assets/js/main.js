@@ -20,7 +20,7 @@ if (accordionFaq) {
 }
 
 Fancybox.bind('[data-fancybox]', {
-  Thumbs : false,
+  Thumbs: false
 });
 
 // плавающий лейбл
