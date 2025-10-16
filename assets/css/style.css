@@ -630,6 +630,10 @@ a {
   backdrop-filter: blur(5px);
 }
 
+.header_bg .header__wrapper.fixed {
+  background: var(--buttons-secondary, #363636);
+}
+
 .header__container {
   display: flex;
   align-items: center;
@@ -650,6 +654,82 @@ a {
   display: flex;
   align-items: center;
   gap: var(--space-lg);
+}
+
+/* Выпадающее меню */
+.header__nav .dropdown {
+  position: relative;
+}
+
+.header__nav .dropdown-toggle {
+  cursor: pointer;
+  position: relative;
+}
+
+.header__nav .dropdown.open .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.header__nav .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: var(--buttons-secondary, #363636);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 12px 0;
+  margin-top: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.header__nav .dropdown.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.header__nav .dropdown-menu li {
+  list-style: none;
+  margin: 0;
+}
+
+.header__nav .dropdown-menu a {
+  display: block;
+  padding: 8px 20px;
+  color: var(--white-main);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-radius: 0;
+}
+
+.header__nav .dropdown-menu a:hover {
+  /*background: rgba(255, 255, 255, 0.1);
+  color: var(--color-primary);*/
+}
+
+/* Стили для активной ссылки в меню */
+.header__nav a.active {
+  color: var(--white-main) !important;
+  position: relative;
+}
+
+.header__nav a.active::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--white-main);
+  content: "";
+  transition: width 0.3s ease-out;
+  width: 100%;
 }
 
 .header__contacts {
@@ -717,13 +797,13 @@ a {
   display: flex;
   position: absolute;
   right: 0;
-  top: -10px;
+  top: 64px;
   width: 23.25rem;
   height: 33.875rem;
   padding: var(--space-lg) var(--space-xl) var(--space-xxl) var(--space-xl);
   flex-direction: column;
-  border-radius: 0 0 0 var(--corner-radius-lg);
-  background: var(--bg-primary);
+  border-radius: var(--corner-radius-md, 16px) 0 0 0;
+  background: var(--bg-tertiary, #363636);
   opacity: 0;
   -webkit-transform: translate(2000px);
   -ms-transform: translate(2000px);
@@ -781,21 +861,67 @@ a {
 
   .side-menu__top {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  }
+  
+  .side-menu__title {
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--icons-inverse-on-color);
+    width: 100%;
   }
 
   .header__nav {
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
   }
 
-  .header__nav li a {
+  /*.header__nav li a {
     font-size: 1.8rem;
     font-style: normal;
     font-weight: 900;
     line-height: 110%;
     color: var(--text-main);
+  }*/
+
+  /* Активная ссылка в мобильном меню */
+  /*.header__nav li a.active {
+    color: var(--color-primary) !important;
+    font-weight: 900;
+  }*/
+
+  .header__nav li a.active::after {
+    display: none; /* Убираем подчеркивание на мобильных */
+  }
+
+  /* Выпадающее меню на мобильных */
+  .header__nav .dropdown-menu {
+    position: static;
+    background: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+    padding: 8px 0 0 20px;
+    margin-top: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: none;
+  }
+
+  .header__nav .dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  /*.header__nav .dropdown-menu a {
+    padding: 6px 0;
+    font-size: 1.4rem;
+    color: var(--text-main);
+    text-align: right;
+  }*/
+
+  .header__nav .dropdown-toggle::after {
+    margin-left: 6px;
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-left-width: 3px;
   }
 
   .header_not-found p {
@@ -1039,11 +1165,21 @@ a {
 }
 
 .tour__bg_arenda {
-  background-image: url(../img/tour-1.jpg);
+  background:
+          linear-gradient(180deg, rgba(102, 102, 102, 0.40) 26.48%, rgba(0, 0, 0, 0.40) 60.78%),
+          url("../img/tour-1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .tour__bg_unic {
-  background-image: url(../img/tour-2.jpg);
+  background:
+          linear-gradient(180deg, rgba(102, 102, 102, 0.40) 26.48%, rgba(0, 0, 0, 0.40) 60.78%),
+          url("../img/tour-2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .tour__bg_1 {

@@ -366,6 +366,7 @@ render_header([
   <script type="text/javascript" src="assets/js/libs/dynamic-adaptive/dynamic-adaptive.min.js"></script>
 
   <script type="text/javascript" src="assets/js/swipers.js"></script>
+  <script type="text/javascript" src="assets/js/nav.js"></script>
   <script type="text/javascript" src="assets/js/main.js"></script>
   <script type="text/javascript" src="assets/js/tabs.js"></script>
 
@@ -375,6 +376,7 @@ render_header([
   <script type="text/javascript" src="assets/js/mosaic-reveal.js"></script>
   <script type="text/javascript" src="assets/js/feature-icons-stagger.js"></script>
   <script type="text/javascript" src="assets/js/smooth-scroll.js"></script>
+  <script type="text/javascript" src="assets/js/dropdown-menu.js"></script>
   <script type="text/javascript" src="assets/js/hero-reveal.js"></script>
 </body>
 
