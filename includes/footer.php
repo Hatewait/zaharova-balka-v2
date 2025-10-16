@@ -13,14 +13,14 @@
             </li>
           </ul>
         </div>
-        <a href="#" class="button-texted link-md-light color-white footer__grid-button">
+        <button  class="btn-reset button-texted link-md-light color-white footer__grid-button" data-graph-path="consult">
           <span class="link-decor">Оставить заявку</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path
               d="M5.43469 3.43457C5.74711 3.12215 6.25313 3.12215 6.56555 3.43457L10.5656 7.43457L11.132 8L10.5656 8.56543L6.56555 12.5654C6.25317 12.8778 5.74711 12.8777 5.43469 12.5654C5.12229 12.253 5.12232 11.747 5.43469 11.4346L8.86926 8L5.43469 4.56543C5.12229 4.25303 5.12232 3.74699 5.43469 3.43457Z"
               fill="white" />
           </svg>
-        </a>
+        </button>
       </div>
       <div class="footer__grid-group">
         <div class="footer__grid-item">
@@ -31,14 +31,14 @@
             </li>
           </ul>
         </div>
-        <a href="" class="button-texted link-md-light color-white footer__grid-button">
+        <button class="btn-reset button-texted link-md-light color-white footer__grid-button" data-graph-path="consult">
           <span class="link-decor">Задать вопрос</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path
               d="M5.43469 3.43457C5.74711 3.12215 6.25313 3.12215 6.56555 3.43457L10.5656 7.43457L11.132 8L10.5656 8.56543L6.56555 12.5654C6.25317 12.8778 5.74711 12.8777 5.43469 12.5654C5.12229 12.253 5.12232 11.747 5.43469 11.4346L8.86926 8L5.43469 4.56543C5.12229 4.25303 5.12232 3.74699 5.43469 3.43457Z"
               fill="white" />
           </svg>
-        </a>
+        </button>
       </div>
       <div class="footer__grid-group">
         <div class="footer__grid-item">
@@ -53,14 +53,14 @@
           </ul>
           <p class="caption-sm text-color-secondary-opacity">с 8:00 до 21:00 (ежедневно)</p>
         </div>
-        <a href="" class="button-texted link-md-light color-white footer__grid-button">
+        <button  class="btn-reset button-texted link-md-light color-white footer__grid-button" data-graph-path="call">
           <span class="link-decor">Заказать звонок</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path
               d="M5.43469 3.43457C5.74711 3.12215 6.25313 3.12215 6.56555 3.43457L10.5656 7.43457L11.132 8L10.5656 8.56543L6.56555 12.5654C6.25317 12.8778 5.74711 12.8777 5.43469 12.5654C5.12229 12.253 5.12232 11.747 5.43469 11.4346L8.86926 8L5.43469 4.56543C5.12229 4.25303 5.12232 3.74699 5.43469 3.43457Z"
               fill="white" />
           </svg>
-        </a>
+        </button>
       </div>
       <div class="footer__grid-group">
         <div class="footer__grid-item">
@@ -71,14 +71,14 @@
             </li>
           </ul>
         </div>
-        <a href="" class="button-texted link-md-light color-white footer__grid-button">
+        <button class="btn-reset button-texted link-md-light color-white footer__grid-button" data-graph-path="consult">
           <span class="link-decor">Связаться с нами</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path
               d="M5.43469 3.43457C5.74711 3.12215 6.25313 3.12215 6.56555 3.43457L10.5656 7.43457L11.132 8L10.5656 8.56543L6.56555 12.5654C6.25317 12.8778 5.74711 12.8777 5.43469 12.5654C5.12229 12.253 5.12232 11.747 5.43469 11.4346L8.86926 8L5.43469 4.56543C5.12229 4.25303 5.12232 3.74699 5.43469 3.43457Z"
               fill="white" />
           </svg>
-        </a>
+        </button>
       </div>
     </div>
     <div class="footer__line">
@@ -193,14 +193,62 @@
               </span>
             </label>
           </div>
-          <button class="button-filled color-white buttons-lg-medium form__button" aria-label="Отправить форму"
-            data-submit-form>Забронировать
+          <button class="button-filled color-white buttons-lg-medium form__button" aria-label="Отправить форму">Забронировать
           </button>
         </div>
       </form>
     </div>
   </div>
+  <div class="graph-modal__container graph-modal__container_custom" role="dialog" aria-modal="true"
+       data-graph-target="call">
+    <div class="graph-modal__content">
+      <button class="btn-reset graph-modal__close js-modal-close" aria-label="Закрыть модальное окно">
+        <svg class="icon-stroke" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+             fill="none">
+          <path d="M20 4L4 20M20 20L4 4" stroke="#222222" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+      <div class="graph-modal__top space-lg">
+        <p class="subtitle-xl">Заявка на обратный звонок</p>
+        <p class="text-md-regular text-color-secondary">Оставьте номер — мы перезвоним, расскажем подробнее о «Байраме» и поможем спланировать ваш отдых</p>
+      </div>
 
+      <form action="" class="form" data-call-form data-form-reset>
+        <div class="form__inputs space-xl">
+          <div class="form__inputs-group">
+            <input name="name" type="text" placeholder="Имя Фамилия"
+                   class="custom-input placeholder-primary text-lg-light text-color-secondary" data-input-name>
+          </div>
+
+          <div class="form__inputs-group">
+            <input name="tel" type="tel" placeholder="Номер телефона"
+                   class="custom-input placeholder-primary text-lg-light text-color-secondary" data-input-tel>
+          </div>
+
+          <div class="form__inputs-group">
+            <input name="email" type="email" placeholder="Электронная почта"
+                   class="custom-input placeholder-primary text-lg-light text-color-secondary" data-input-email>
+          </div>
+
+        </div>
+        <div class="form__action">
+          <div class="form__agreement">
+            <label class="custom-checkbox custom-checkbox_form">
+              <input type="checkbox" checked required>
+              <span class="text-lg-light">
+                <span class="form__agreement-caption">
+                  Нажимая кнопку, вы даете согласие на обработку
+                  <a href="#" class="link-md-light color-accent form__agreement-link">персональных данных</a>
+                </span>
+              </span>
+            </label>
+          </div>
+          <button class="button-filled color-white buttons-lg-medium form__button" aria-label="Отправить форму">Отправить
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
   <div class="graph-modal__container graph-modal__container_custom" role="dialog" aria-modal="true"
     data-graph-target="success-consult">
     <div class="graph-modal__content">

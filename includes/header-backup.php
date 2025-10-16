@@ -129,7 +129,7 @@ function render_header(array $opts): void
   echo '' . "\n";
   echo '      <div class="header__contacts" data-da=".js-insert-contacts,1023">' . "\n";
   echo '        <a href="tel:+74951531498" class="text-md text-color-primary-inverse link-decor">+7(495) 153-14-98</a>' . "\n";
-  echo '        <a href="mailto:info@t-d.ru" class="color-white link-md-medium dashed">Перезвоните мне</a>' . "\n";
+  echo '        <button class="color-white link-md-medium dashed btn-reset" data-graph-path="call">Перезвоните мне</button>' . "\n";
   echo '      </div>' . "\n";
   echo '' . "\n";
   echo '      <div class="side-menu" data-menu>' . "\n";

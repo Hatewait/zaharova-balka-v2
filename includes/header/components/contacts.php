@@ -11,7 +11,7 @@ $contacts_config = $config['contacts'];
     class="text-md text-color-primary-inverse link-decor">
     <?= htmlspecialchars($contacts_config['phone']) ?>
   </a>
-  <a href="<?= htmlspecialchars($contacts_config['callback_href']) ?>" class="color-white link-md-medium dashed">
+  <button class="color-white link-md-medium dashed btn-reset" data-graph-path="call">
     <?= htmlspecialchars($contacts_config['callback_text']) ?>
-  </a>
+  </button>
 </div>
