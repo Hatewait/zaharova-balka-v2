@@ -139,7 +139,7 @@
       </ul>
     </div>
     <div class="footer__bottom">
-      <a href="" class="color-white link-md-light">Политика конфиденциальности и условия использования</a>
+      <a href="" class="color-white link-md-light link-decor">Политика конфиденциальности и условия использования</a>
       <span class="text-md-regular text-color-secondary-opacity">© 2025 Все права защищены</span>
     </div>
   </div>

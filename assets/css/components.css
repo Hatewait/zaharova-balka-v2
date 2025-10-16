@@ -21,7 +21,7 @@
   justify-content: center;
   width: 5rem;
   height: 5rem;
-  background: var(--buttons-primary, #80011F);
+  background: var(--buttons-primary-default, #80011F);
   transition: var(--transition);
   cursor: pointer;
 }
@@ -35,7 +35,7 @@
   gap: var(--space-xxs, 0.5rem);
   width: max-content;
   border-radius: var(--corner-radius-circle, 624999989248rem);
-  background: var(--buttons-primary, #80011F);
+  background: var(--buttons-primary-default, #80011F);
   transition: background-color 0.3s ease-in;
 }
 
@@ -49,7 +49,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-xxs);
-  color: var(--buttons-secondary);
+  color: var(--buttons-secondary-default);
   transition: var(--transition);
 }
 
@@ -58,11 +58,11 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-xxs);
-  color: var(--buttons-secondary);
+  color: var(--buttons-secondary-default);
   padding: var(--space-md, 1.5rem) var(--space-xl, 3rem);
   width: max-content;
   border-radius: var(--corner-radius-circle, 624999989248rem);
-  border: 2px solid var(--buttons-secondary, #363636);
+  border: 2px solid var(--buttons-secondary-default, #363636);
   transition: var(--transition);
 }
 
@@ -111,7 +111,7 @@
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
-  background: var(--buttons-primary, #80011F);
+  background: var(--buttons-primary-default, #80011F);
 }
 
 .price-wrap {
@@ -147,27 +147,29 @@
 
 @media (hover: hover), (-ms-high-contrast: none) {
   .button-filled:hover {
-    background: var(--buttons-primary-hover, #80011F);
+    background: var(--buttons-primary-hover);
   }
 
   .button-filled:active {
-    background: var(--buttons-primary-pressed, #80011F);
+    background: var(--buttons-primary-pressed);
   }
 
   .header__burger:hover {
-    background: var(--buttons-primary-hover, #80011F);
+    background: var(--buttons-primary-hover);
   }
 
   .button-bordered:hover {
-
+    border-color: var(--buttons-secondary-hover);
+    color: var(--buttons-secondary-hover);
   }
 
   .button-bordered:active {
-
+    border-color: var(--buttons-secondary-pressed);
+    color: var(--buttons-secondary-pressed);
   }
 
   .round-button:not(.swiper-button-disabled):hover {
-    background: var(--buttons-primary-hover, #80011F);
+    background: var(--buttons-primary-hover);
   }
 
   .button-texted:hover {

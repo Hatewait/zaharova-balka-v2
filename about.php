@@ -335,7 +335,9 @@ render_header([
       <div class="container">
         <div class="promo-video__wrap">
           <button class="btn-reset promo-video__play-btn" data-fancybox="video" data-src="#video-content">
-            <img src="/assets/img/play-btn.svg" alt="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M23.5558 16.0005L11.8889 23.0005V9.00049L23.5558 16.0005Z" fill="white"/>
+            </svg>
           </button>
           <!-- Скрытое видео для Fancybox -->
           <div id="video-content" style="display: none;">
