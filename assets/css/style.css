@@ -989,7 +989,7 @@ a {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  overflow-x: auto;
+  /*overflow-x: auto;*/
   white-space: nowrap;
 }
 
