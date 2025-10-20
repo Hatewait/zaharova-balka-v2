@@ -155,6 +155,9 @@
   <script type="text/javascript" src="assets/js/libs/inputmask/inputmask.min.js"></script>
   <script type="text/javascript" src="assets/js/libs/dynamic-adaptive/dynamic-adaptive.min.js"></script>
 
+  <script type="text/javascript" src="assets/js/nav.js"></script>
+  <script type="text/javascript" src="assets/js/main.js"></script>
+
   <script type="text/javascript" src="assets/js/validate-form.js"></script>
   <script type="text/javascript" src="assets/js/reveal-on-scroll.js"></script>
   <script type="text/javascript" src="assets/js/services-stagger.js"></script>

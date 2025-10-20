@@ -1296,11 +1296,11 @@ a {
 .tour__bottom button { pointer-events: auto !important; }
 
 .tour__text {
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* количество строк */
+  /*display: -webkit-box;
+  -webkit-line-clamp: 3; !* количество строк *!
   -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis;*/
 }
 
 @media (max-width: 1320px) {
